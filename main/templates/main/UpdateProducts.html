@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Редактировать товар
+{% endblock %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <h1 style="color: darkgray">Редактировать товар </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }} <br>
+        <p style="color: darkgray"> Название </p>
+        {{ form.task }}<br>
+        <p style="color: darkgray"> Описание </p>
+        {{ form.price }}<br>
+        <p style="color: darkgray"> Цена </p>
+        {{ form.discount }}<br>
+        <p style="color: darkgray"> Скидка </p>
+        {{ form.quantity}}<br>
+        <p style="color: darkgray"> Количество </p>
+        {{ form.brand }}<br>
+        <p style="color: darkgray"> Бренд </p>
+        {{ form.section }}<br>
+         <p style="color: darkgray"> Отдел </p>
+        <button type="submit" class="btn-secondary">Редактировать</button>
+        <span>{{ error }}</span>
+       </form>
+{% endblock %}

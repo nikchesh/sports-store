@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Удалить товар
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <h1 style="color: darkgray">Подтверждение удаления</h1>
+        <div class="alert alert-dark mt-3">
+            <h3>Действительно ли вы хотите удалить этот товар?</h3>
+        </div>
+
+
+        <div class="alert alert-dark mt-3">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <p>{{ task }}</p>
+        </div>
+  <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+        <button type="submit" class="btn-secondary">Да, удалить товар</button>
+        <span>{{ error }}</span>
+       </form>
+
+{% endblock %}

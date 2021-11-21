@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Скидка на бренд
+{% endblock %}
+
+
+
+{% block content %}
+
+    <h1 style="color: darkgray">Введите название бренда и скидку</h1>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <div class="DiscountCSS" action="{% url 'BrandDiscount' %}">
+        <form>
+             <script src="https://kit.fontawesome.com/e1e9400ac3.js" crossorigin="anonymous"></script>
+            <input  placeholder="Название бренда" name="ChangingBrand">
+            <input type="text" placeholder="Желаемая скидка" name="ChangingDiscount">
+            <button type="submit" >Применить</button>
+        </form>
+    </div>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  <img class="center-pic" src="http://getdrawings.com/free-icon-bw/promotion-icon-png-4.png" alt="Логотип" height="100px"/>
+{% endblock %}
+

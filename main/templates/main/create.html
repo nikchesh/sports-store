@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+Добавить товар
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <h1 style="color: darkgray">Добавить товар</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.task }}<br>
+        {{ form.price }}<br>
+        {{ form.discount }}<br>
+        {{ form.quantity }}<br>
+        {{ form.brand }}<br>
+        {{ form.section }}<br>
+        <button type="submit" class="btn-secondary">Добавить</button>
+        <span>{{ error }}</span>
+       </form>
+{% endblock %}

@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+@import url("https://kit.fontawesome.com/e1e9400ac3.js");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 1.1px;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  background: #1c1d22;
+  font-family: "Varela Round", sans-serif;
+}
+
+
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 720px;
+  margin: 0 auto;
+  height: 100vh;
+  list-style: none;
+}
+
+.menu li {
+  width: 125px;
+  height: 50px;
+  -webkit-transition: background-position-x 0.9s linear;
+  transition: background-position-x 0.9s linear;
+  text-align: center;
+}
+.menu li a {
+  font-size: 22px;
+  color: #777;
+  text-decoration: none;
+  -webkit-transition: all 0.45s;
+  transition: all 0.45s;
+}
+.menu li:hover {
+  background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+  -webkit-animation: line 1s;
+          animation: line 1s;
+}
+.menu li:hover a {
+  color: #d94f5c;
+}
+.menu li:not(:last-child) {
+  margin-right: 30px;
+}
+
+@-webkit-keyframes line {
+  0% {
+    background-position-x: 390px;
+  }
+}
+
+@keyframes line {
+  0% {
+    background-position-x: 390px;
+  }
+}
+
+
+
+
+a.button17 {
+  display: inline-block;
+  font-family: arial,sans-serif;
+  font-size: 11px;
+  color: rgb(205,216,228);
+  text-shadow: 0 -1px rgb(75, 81, 83);
+  text-decoration: none;
+  user-select: none;
+  line-height: 2em;
+  padding: 1px 1.2em;
+  outline: none;
+  border: 1px solid rgb(116, 116, 121);
+  border-radius: 3px;
+  background: rgb(145, 156, 169) linear-gradient(rgb(122, 136, 150), rgb(109, 129, 126));
+  box-shadow:
+   inset 0 1px rgba(101,114,126,1),
+   inset 0 0 1px rgba(140,150,170,.8),
+   0 1px rgb(83,94,104),
+   0 0 1px rgb(86,96,106);
+}
+a.button17:active {
+  box-shadow:
+   inset 0 1px 3px rgb(174, 152, 152),
+   0 1px rgb(83,94,104),
+   0 0 1px rgb(86,96,106);
+}
+a.button17:focus:not(:active) {
+  border: 1px solid rgb(22,32,43);
+  border-bottom: 1px solid rgb(25,34,45);
+  background: rgb(53,61,71);
+  box-shadow:
+   inset 0 1px 3px rgba(0,10,20,.5),
+   0 1px rgb(83,94,104),
+   0 0 1px rgb(86,96,106);
+  pointer-events: none;
+}
+
+
+.d7 {background: #7BA7AB;}
+.d7:after {content:""; clear:both; display:table}
+.d7 form {
+  width: auto;
+  float: right;
+  margin-right: 30px;
+}
+.d7 input {
+  width: 250px;
+  height: 42px;
+  padding-left: 15px;
+  border-radius: 42px;
+  border: 2px solid #324b4e;
+  background: #F9F0DA;
+  outline: none;
+  position: relative;
+  transition: .3s linear;
+}
+.d7 input:focus {
+  width: 300px;
+}
+.d7 button {
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 130px;
+  right: 240px;
+  cursor: pointer;
+}
+.d7 button:before{
+  content: "\f002";
+  font-family: FontAwesome;
+  color: #324b4e;
+}
+
+
+
+
+
+.DiscountCSS {background: #7BA7AB;}
+.DiscountCSS:after {content:""; clear:both; display:table}
+.DiscountCSS form {
+  width: auto;
+  float: left;
+  margin-right: 30px;
+}
+.DiscountCSS input {
+  width: 350px;
+  height: 42px;
+  padding-left: 150px;
+  border-radius: 42px;
+  border: 2px solid #324b4e;
+  background: #F9F0DA;
+  outline: none;
+  position: relative;
+  transition: .3s linear;
+}
+.DiscountCSS input:focus {
+  width: 400px;
+}
+.DiscountCSS button {
+  width: 42px;
+  height: 42px;
+  background: none;
+  border: none;
+  position: absolute;
+  top: 130px;
+  right: 510px;
+  cursor: pointer;
+}
+.DiscountCSS button:before{
+  content: "\f02b";
+  font-family: FontAwesome;
+  color: #324b4e;
+}
+
+.center-pic{
+  background: none;
+  border: none;
+  position: absolute;
+  top: 83%;
+  right: 2%;
+}

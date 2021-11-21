@@ -1,0 +1,41 @@
+{% extends 'main/baseSale.html' %}
+{% load static %}
+{% block title %}
+Журнал продаж
+{% endblock %}
+
+{% block content %}
+
+    <h1 style="color: darkgray">Журнал продаж</h1>
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="d7" action="{% url 'products' %}">
+    <form>
+        <script src="https://kit.fontawesome.com/e1e9400ac3.js" crossorigin="anonymous"></script>
+      <input type="text" placeholder="Введите дату..." name="search">
+      <button type="submit"></button>
+    </form>
+</div>
+
+
+
+
+    {% if tasks %}
+        {% for el in tasks %}
+        <div class="alert alert-dark mt-3">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <h3>Дата: {{ el.SaleData }}</h3>
+            <p>Продажа: {{ el.idSeller }}</p>
+            <p>Количество: {{ el.quantitySale }}</p>
+            <p>Продажу совершил(а): {{ el.employee }}</p>
+            <p>Покупатель: {{ el.client  }}</p>
+    </div>
+
+        {% endfor %}
+    {% else %}
+        <p style="color: #F9F0DA;"> У нас нет записей!</p>
+    {% endif %}
+{% endblock %}
+

@@ -1,0 +1,21 @@
+{% extends 'main/baseShortage.html' %}
+{% load static %}n
+{% block title %}
+Добавить недостачу
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <h1 style="color: darkgray">Добавить недостачу</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.ShortageData }}<br>
+        {{ form.idSeller }}<br data-model-name="Seller">
+        {{ form.quantityShortage }}<br>
+        {{ form.employee }}<br>
+
+
+        <button type="submit" class="btn-secondary">Добавить</button>
+        <span style="color: #F9F0DA">{{ error }}</span>
+       </form>
+{% endblock %}

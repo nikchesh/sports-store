@@ -1,0 +1,30 @@
+{% extends 'main/baseEmployee.html' %}
+{% load static %}
+{% block title %}
+Редактировать информацию о сотруднике
+{% endblock %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <h1 style="color: darkgray">Редактировать информацию о сотруднике </h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.surname }} <br>
+        <p style="color: darkgray"> Имя </p>
+        {{ form.name }}<br>
+        <p style="color: darkgray"> Фамилия </p>
+        {{ form.middlename }}<br>
+        <p style="color: darkgray"> Отчество </p>
+        {{ form.mail }}<br>
+        <p style="color: darkgray"> Почта </p>
+        {{ form.number }}<br>
+        <p style="color: darkgray"> Номер телефона </p>
+        {{ form.salary }}<br>
+        <p style="color: darkgray"> Зарплата </p>
+        {{ form.points }}<br>
+        <p style="color: darkgray"> Баллы </p>
+        <button type="submit" class="btn-secondary">Редактировать</button>
+        <span>{{ error }}</span>
+       </form>
+{% endblock %}

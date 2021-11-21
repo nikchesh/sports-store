@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Меню</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+</head>
+
+<body>
+  <nav>
+  <ul class="menu">
+    <li><a  href="{% url 'products' %}">Список товаров</a></li>
+    <li><a href="{% url 'client' %}">  Список клиентов  </a></li>
+    <li><a href="{% url 'employee' %}">  Список сотрудников </a></li>
+    <li><a href="{% url 'sale' %}">  Журнал продаж  </a></li>
+    <li><a href="{% url 'shortage' %}">  Журнал недостач  </a></li>
+  </ul>
+</nav>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+{% extends 'main/baseClient.html' %}
+{% load static %}
+{% block title %}
+Список клиентов
+{% endblock %}
+
+{% block content %}
+
+    <h1 style="color: darkgray"> Список клиентов</h1>
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="d7" action="{% url 'products' %}">
+    <form>
+        <script src="https://kit.fontawesome.com/e1e9400ac3.js" crossorigin="anonymous"></script>
+      <input type="text" placeholder="Искать здесь..." name="search">
+      <button type="submit"></button>
+    </form>
+</div>
+
+
+
+
+    {% if tasks %}
+        {% for el in tasks %}
+        <div class="alert alert-dark mt-3">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <h3>Фамилия: {{ el.surname }}</h3>
+            <p>Имя: {{ el.name }}</p>
+            <p>Отчество: {{ el.middlename }}</p>
+            <p>Номер телефона: {{ el.number }}</p>
+            <p>Почтовый адрес: {{ el.mail }}</p>
+            <p>Номер карты: {{ el.id }}</p>
+            <a style="color: midnightblue;" href="{% url 'UpdateClient' el.id %}" class="button">Редактировать</a>
+            <a style="color: midnightblue;" href="{% url 'DeleteClient' el.id %}" class="button">Удалить</a>
+        </div>
+
+        {% endfor %}
+    {% else %}
+        <p style="color: #F9F0DA;"> У нас нет записей!</p>
+    {% endif %}
+{% endblock %}
+

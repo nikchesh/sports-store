@@ -1,0 +1,47 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <h1 style="color: darkgray"> Список товаров</h1>
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="d7" action="{% url 'products' %}">
+    <form>
+        <script src="https://kit.fontawesome.com/e1e9400ac3.js" crossorigin="anonymous"></script>
+      <input type="text" placeholder="Искать здесь..." name="search">
+      <button type="submit"></button>
+    </form>
+</div>
+
+
+
+
+    {% if tasks %}
+        {% for el in tasks %}
+        <div class="alert alert-dark mt-3">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <h3>Название: {{ el.title }}</h3>
+            <p>Описание: {{ el.task }}</p>
+            <p>Цена: {{ el.price }} рублей</p>
+            <p>Скидка: {{ el.discount }} %</p>
+            <p>Итоговая цена: {{ el.FinishPrice }} рублей</p>
+            <p>Количество: {{ el.quantity }} штук </p>
+            <p>Бренд: {{ el.brand }}</p>
+            <p>ID товара: {{ el.id }}</p>
+            <p>Номер отдела: {{ el.section }}</p>
+            <a style="color: midnightblue;" href="{% url 'UpdateProducts' el.id %}" class="button">Редактировать</a>
+            <a style="color: midnightblue;" href="{% url 'DeleteProducts' el.id %}" class="button">Удалить</a>
+        </div>
+
+        {% endfor %}
+    {% else %}
+        <p style="color: #F9F0DA;"> У нас нет записей!</p>
+    {% endif %}
+{% endblock %}
+

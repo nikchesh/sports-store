@@ -1,0 +1,39 @@
+{% extends 'main/baseShortage.html' %}
+{% load static %}
+{% block title %}
+Журнал недостач
+{% endblock %}
+
+{% block content %}
+
+    <h1 style="color: darkgray">Журнал недостач</h1>
+
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="d7" action="{% url 'products' %}">
+    <form>
+        <script src="https://kit.fontawesome.com/e1e9400ac3.js" crossorigin="anonymous"></script>
+      <input type="text" placeholder="Искатбь здесь" name="search">
+      <button type="submit"></button>
+    </form>
+</div>
+
+
+
+    {% if tasks %}
+        {% for el in tasks %}
+        <div class="alert alert-dark mt-3">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <h3>Дата: {{ el.ShortageData }}</h3>
+            <p>Недостача: {{ el.idSeller }}</p>
+            <p>Количество недостач: {{ el.quantityShortage }}</p>
+            <p>Сотрудник в эту смену: {{ el.employee }}</p>
+    </div>
+
+        {% endfor %}
+    {% else %}
+        <p style="color: #F9F0DA;"> У нас нет записей!</p>
+    {% endif %}
+{% endblock %}
+

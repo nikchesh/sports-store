@@ -1,0 +1,29 @@
+{% extends 'main/baseEmployee.html' %}
+{% load static %}
+{% block title %}
+Удалить сотрудника
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <h1 style="color: darkgray">Подтверждение удаления</h1>
+        <div class="alert alert-dark mt-3">
+            <h3>Действительно ли вы хотите удалить этого сотрудника?</h3>
+        </div>
+
+
+
+        <div class="alert alert-dark mt-3">
+            <link rel="stylesheet" href="{% static 'css/style.css' %}">
+            <p>{{ employee }}</p>
+        </div>
+
+  <form method="post">
+        {% csrf_token %}
+        {{ form.surname }}<br>
+        {{ form.name }}<br>
+        <button type="submit" class="btn-secondary">Да, удалить сотрудника</button>
+        <span>{{ error }}</span>
+       </form>
+
+{% endblock %}

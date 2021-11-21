@@ -1,0 +1,20 @@
+{% extends 'main/baseClient.html' %}
+{% load static %}
+{% block title %}
+Добавить клиента
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <h1 style="color: darkgray">Добавить клиента</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.surname }}<br>
+        {{ form.name }}<br>
+        {{ form.middlename }}<br>
+        {{ form.number }}<br>
+        {{ form.mail }}<br>
+        <button type="submit" class="btn-secondary">Добавить</button>
+        <span>{{ error }}</span>
+       </form>
+{% endblock %}

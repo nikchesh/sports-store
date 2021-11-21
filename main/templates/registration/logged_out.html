@@ -1,0 +1,10 @@
+{% load static %}
+
+
+{% block content %}
+
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <h1 style="color: darkgray">Вы вышли из системы</h1>
+        <a style="color: #79aec8""  href="{% url 'login'%}">Нажми сюда, чтобы войти.</a>
+
+{% endblock %}

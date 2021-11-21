@@ -1,0 +1,22 @@
+{% extends 'main/baseEmployee.html' %}
+{% load static %}
+{% block title %}
+Добавить сотрудника
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <h1 style="color: darkgray">Добавить сотрудника</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.surname }}<br>
+        {{ form.name }}<br>
+        {{ form.middlename }}<br>
+        {{ form.number }}<br>
+        {{ form.mail }}<br>
+        {{ form.salary }}<br>
+        {{ form.points }}<br>
+        <button type="submit" class="btn-secondary">Добавить</button>
+        <span>{{ error }}</span>
+       </form>
+{% endblock %}
